@@ -1,0 +1,322 @@
+/* =========================================================
+   GLOBAL RESET & VARIABLES
+========================================================= */
+:root {
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --secondary: #0f172a;
+  --background: #f4f6fb;
+  --sidebar-bg: #0b1220;
+  --card-bg: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
+/* =========================================================
+   LOADING OVERLAY
+========================================================= */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb;
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0b1220, #020617);
+  color: #fff;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.sidebar h2.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  color: #cbd5f5;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 15px;
+}
+
+.nav-link i {
+  width: 20px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background: rgba(59,130,246,0.15);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.badge {
+  margin-left: auto;
+  background: var(--danger);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Logout Button */
+.logout-btn {
+  margin-top: auto;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 12px;
+  color: #fff;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(220,38,38,0.2);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  padding: 30px;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.top-bar h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.top-bar p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.top-bar input {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  width: 220px;
+}
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* =========================================================
+   WELCOME MESSAGE
+========================================================= */
+.welcome-message {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  padding: 40px;
+  border-radius: var(--radius);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.welcome-message h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .top-bar input {
+    display: none;
+  }
+}

@@ -1,0 +1,80 @@
+<!-- components/dashboard.html -->
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+
+<section id="dashboard" class="content-section active">
+    <!-- Stats Cards -->
+    <div class="stats-cards">
+        <div class="stat-card news">
+            <div class="stat-icon">
+                <i class="fas fa-newspaper"></i>
+            </div>
+            <div class="stat-value" id="newsCount">0</div>
+            <div class="stat-label">Total News Articles</div>
+        </div>
+        <div class="stat-card gallery">
+            <div class="stat-icon">
+                <i class="fas fa-images"></i>
+            </div>
+            <div class="stat-value" id="galleryCount">0</div>
+            <div class="stat-label">Gallery Photos</div>
+        </div>
+        <div class="stat-card services">
+            <div class="stat-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="stat-value" id="servicesCount">0</div>
+            <div class="stat-label">Services & Programs</div>
+        </div>
+        <div class="stat-card contacts">
+            <div class="stat-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="stat-value" id="contactsCount">0</div>
+            <div class="stat-label">New Messages</div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-history"></i> Recent Activity</h2>
+        </div>
+        <div class="table-container">
+            <table id="activityTable">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="activityTableBody">
+                    <!-- Activity rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+<div class="form-section">
+    <div class="section-header">
+        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <button class="btn btn-primary quick-action-btn" data-section="news">
+            <i class="fas fa-plus"></i> Add News
+        </button>
+        <button class="btn btn-success quick-action-btn" data-section="gallery">
+            <i class="fas fa-upload"></i> Upload Photo
+        </button>
+        <button class="btn btn-secondary quick-action-btn" data-section="services">
+            <i class="fas fa-plus-circle"></i> Add Service
+        </button>
+        <button class="btn btn-primary quick-action-btn" data-section="contacts">
+            <i class="fas fa-envelope"></i> View Messages
+        </button>
+    </div>
+</div>
+</section>

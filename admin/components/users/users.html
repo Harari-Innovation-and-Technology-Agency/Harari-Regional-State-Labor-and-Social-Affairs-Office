@@ -1,0 +1,153 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/users.css">
+
+<section id="users" class="content-section active">
+    <!-- Stats Cards -->
+    <div class="users-stats-grid">
+        <div class="stat-card primary">
+            <i class="fas fa-users"></i>
+            <h3 id="totalUsersCount">0</h3>
+            <p>Total Users</p>
+        </div>
+        <div class="stat-card success">
+            <i class="fas fa-check-circle"></i>
+            <h3 id="activeUsersCount">0</h3>
+            <p>Active Users</p>
+        </div>
+        <div class="stat-card warning">
+            <i class="fas fa-shield-alt"></i>
+            <h3 id="adminCount">0</h3>
+            <p>Administrators</p>
+        </div>
+        
+    </div>
+
+    <!-- Add/Edit User Form -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2 id="formTitle"><i class="fas fa-user-plus"></i> Add New User</h2>
+            <button type="button" class="btn btn-secondary" id="resetUserForm">
+                <i class="fas fa-redo"></i> Clear Form
+            </button>
+        </div>
+        
+        <form id="userForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="userUsername">
+                        <i class="fas fa-user"></i> Username *
+                    </label>
+                    <input type="text" id="userUsername" class="form-control" 
+                           required minlength="3" maxlength="30"
+                           placeholder="e.g., john_doe">
+                    <div class="character-counter" id="usernameCounter">0/30</div>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">
+                        <i class="fas fa-envelope"></i> Email *
+                    </label>
+                    <input type="email" id="userEmail" class="form-control" 
+                           required placeholder="user@example.com">
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="userPassword">
+                        <i class="fas fa-lock"></i> Password *
+                    </label>
+                    <div style="position: relative;">
+                        <input type="password" id="userPassword" class="form-control" 
+                               required minlength="6" autocomplete="new-password">
+                        <i class="fas fa-eye" id="togglePassword" 
+                           style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--gray);"></i>
+                    </div>
+                    <div id="passwordStrength" class="password-strength"></div>
+                </div>
+                <div class="form-group">
+                    <label for="userRole">
+                        <i class="fas fa-tag"></i> Role *
+                    </label>
+                    <select id="userRole" class="form-control" required>
+                        <option value="editor">🛡️ Super Admin</option>
+                        <option value="admin">🛡️ Administrator</option>
+                        
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary" id="userSubmitBtn">
+                    <i class="fas fa-user-plus"></i> Create User
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Users List -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-users"></i> All Users</h2>
+            <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                <div class="filter-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="userSearch" class="form-control filter-input" 
+                           placeholder="Search users...">
+                </div>
+                <select id="roleFilter" class="form-control" style="width: 150px;">
+                    <option value="all">All Roles</option>
+                    <option value="admin">Administrators</option>
+                    <option value="editor">Editors</option>
+                    <option value="viewer">Viewers</option>
+                </select>
+                <select id="statusFilter" class="form-control" style="width: 150px;">
+                    <option value="all">All Status</option>
+                    <option value="active">Active Only</option>
+                    <option value="inactive">Inactive Only</option>
+                </select>
+                <button class="btn btn-secondary" id="refreshUsers">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Last Login</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- User rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Mobile Cards Container -->
+        <div id="mobileUserCards" class="mobile-user-cards"></div>
+        
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+            <div style="color: var(--gray);" id="paginationInfo">
+                Showing 0-0 of 0 users
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-sm btn-secondary" id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span style="padding: 8px 15px; background: var(--light); border-radius: 4px;" id="currentPage">
+                    Page 1
+                </span>
+                <button class="btn btn-sm btn-secondary" id="nextPage" disabled>
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

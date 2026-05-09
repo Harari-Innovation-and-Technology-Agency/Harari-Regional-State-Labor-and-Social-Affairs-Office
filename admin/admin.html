@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harari Labour Office – Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- DEVELOPMENT CSP (SAFE) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+  <!-- Icons & Notifications -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="loading"></div>
+  <p>Loading Dashboard…</p>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal" id="deleteModal">
+  <div class="modal-content">
+    <h3>Confirm Delete</h3>
+    <p id="deleteMessage"></p>
+    <div class="btn-group">
+      <button id="cancelDelete" class="btn btn-secondary">Cancel</button>
+      <button id="confirmDelete" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2 class="brand">
+      <i class="fas fa-landmark"></i> Harari Labour Office
+    </h2>
+
+    <nav>
+  <a class="nav-link active" data-section="dashboard">
+    <i class="fas fa-chart-line"></i> Dashboard
+  </a>
+
+  <a class="nav-link" data-section="news">
+    <i class="fas fa-newspaper"></i> News
+  </a>
+
+  <!-- <a class="nav-link" data-section="pages">
+    <i class="fas fa-file-alt"></i> Pages
+  </a> -->
+
+  <a class="nav-link" data-section="services">
+    <i class="fas fa-briefcase"></i> Services
+  </a>
+
+  <a class="nav-link" data-section="gallery">
+    <i class="fas fa-images"></i> Gallery
+  </a>
+
+  <a class="nav-link" data-section="contacts">
+    <i class="fas fa-envelope"></i> Contacts
+    <span id="contactBadge" class="badge">0</span>
+  </a>
+
+  <a class="nav-link" data-section="users" style="display: none;" id="usersNavLink">
+    <i class="fas fa-users"></i> Users Management
+  </a>
+
+  <a class="nav-link" data-section="plan-report">
+    <i class="fas fa-cog"></i> Plan and Report
+  </a>
+</nav>
+
+
+    <button id="logoutBtn" class="logout-btn">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <button id="mobileMenuBtn" class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageDescription">System overview</p>
+      </div>
+
+      <input type="search" id="globalSearch" placeholder="Search…">
+    </header>
+
+    <!-- Content -->
+    <section id="contentArea">
+
+      <!-- Dashboard Cards -->
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3>Total News</h3>
+          <p id="statNews">0</p>
+        </div>
+        <div class="card">
+          <h3>Messages</h3>
+          <p id="statMessages">0</p>
+        </div>
+        <div class="card">
+          <h3>Users</h3>
+          <p id="statUsers">0</p>
+        </div>
+        <div class="card">
+          <h3>Pages</h3>
+          <p id="statPages">0</p>
+        </div>
+      </div>
+
+      <div class="welcome-message">
+        <h2>Welcome, Admin</h2>
+        <p>Select a section from the menu to manage content.</p>
+      </div>
+
+    </section>
+  </main>
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="module" src="script.js"></script>
+ <script>
+        // Configure Toastr
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            timeOut: 3000
+        };
+  </script>
+<script src="assets/js/notification.js"></script>
+</body>
+</html>

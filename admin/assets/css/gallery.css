@@ -1,0 +1,36 @@
+.file-upload {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.file-upload:hover {
+  border-color: var(--primary);
+  background: #f1f5ff;
+}
+
+.file-upload i {
+  font-size: 40px;
+  color: var(--primary);
+}
+
+#galleryGrid .gallery-item {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.gallery-item .caption {
+  padding: 10px;
+  font-size: 14px;
+}
