@@ -1,0 +1,23 @@
+:root {
+    --primary: #121212;
+    --secondary: #dc2626;
+    --accent: #0d9488;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --gray: #2b3038;
+    --darkyellow: #474a2f;
+    --lightdrk: #c8c8c8;
+    --transition: all 0.3s ease;
+    
+    /* Header Colors */
+    --header-bg: rgb(85, 129, 191);
+    --header-text: white;
+    
+    /* Footer Colors */
+    --footer-bg: var(--dark);
+    --footer-text: #cbd5e1;
+    
+    /* Chatbot Colors */
+    --chat-primary: #0078ff;
+    --chat-secondary: #005bb5;
+}

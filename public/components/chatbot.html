@@ -1,0 +1,27 @@
+<!-- Chatbot Component -->
+<div id="chatbot-widget">
+    <button id="chatbot-toggle" class="chatbot-toggle-btn" aria-label="Open chat">
+        <i class="fas fa-comment"></i>
+    </button>
+    <div id="chat-container" class="chat-container" style="display: none;">
+        <div id="chat-header" class="chat-header">
+            <span>Citizens’ Charter Bot</span>
+            <button id="chatbot-close" class="chatbot-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatbox" class="chat-messages">
+            <div class="message bot welcome-message">
+                <i class="fas fa-robot"></i>
+                Hello! I can help you with information about our Citizens' Charter. 
+                Ask me about our mission, vision, services, rights, or how to submit a complaint.
+            </div>
+        </div>
+        <div id="chat-input-area" class="chat-input-area">
+            <input id="userInput" type="text" placeholder="Type your question..." autocomplete="off" />
+            <button id="sendBtn" class="chat-send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>

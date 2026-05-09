@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" id="html-lang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Services - Harari Labour and Social Affairs Office</title>
+    <link rel="icon" href="/assets/images/orglogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS - Modular Imports -->
+        <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    
+    <!-- PAGE HEADER - Consistent with News page -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-i18n="services">Our Services</h1>
+            <p data-i18n="servicesDesc">Comprehensive programs and support for our community</p>
+        </div>
+    </header>
+
+    <section class="services-section">
+        <div class="services-header">
+            <img src="/assets/images/public-service.png" alt="Employment Service">
+            <h2 data-i18n="sevicepro">What We Offer</h2>
+        </div>
+        <p data-i18n="seviceproDesc">
+            The main services provided by the institution focus on social protection and security, issues of persons with disabilities, peaceful industrial relations, 
+            and employment in the country and abroad...
+        </p>
+        
+        <!-- Dynamic Services Container -->
+        <div id="services-container" class="services-grid">
+            <!-- Services will be loaded dynamically from API -->
+            <div class="services-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading services...</p>
+            </div>
+        </div>
+        
+        <div class="services-users-header">
+            <img src="/assets/images/operator.png" alt="Service Users">
+            <h2 data-i18n="ourserv">Who We Serve</h2>
+        </div>
+        
+        <div class="service-users-grid">
+            <div class="service-category">
+                <h3 data-i18n="vulnerableGroups">👥 Individuals and Communities</h3>
+                <ul>
+                    <li data-i18n="nested1">👴 Elderly</li>
+                    <li data-i18n="nested2">🛡️ Vulnerable and poor citizens</li>
+                    <li data-i18n="nested3">♿ People with disabilities</li>
+                    <li data-i18n="nested4">💼 Job seekers</li>
+                    <li data-i18n="nested5">👔 Employees</li>
+                    <li data-i18n="nested6">🌍 Total citizens</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h3 data-i18n="vulnerablGroups">🏢 Organizations and Institutions</h3>
+                <ul>
+                    <li data-i18n="nested11">🏭 Employers</li>
+                    <li data-i18n="nested12">🤝 Community-wide organizations</li>
+                    <li data-i18n="nested13">📋 Employment and labor agencies</li>
+                    <li data-i18n="nested14">⚕️ Service providers</li>
+                    <li data-i18n="nested15">❤️ Support institutions for people with disabilities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer will be loaded dynamically -->
+    <!-- Chatbot will be loaded dynamically -->
+    
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" id="html-lang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">News - Harari Labour and Social Affairs Office</title>
+    <link rel="icon" href="/assets/images/orglogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS - Modular Imports -->
+       <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    
+    <header class="page-header">
+        <div class="container">
+            <h1 data-i18n="news">Our News</h1>
+            <p data-i18n="newnewsdesc">Recent news delivered from us to you</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- News Container - Dynamically populated by JavaScript -->
+        <div id="news-container" class="news-items">
+            <div class="loading-spinner-container">
+                <div class="loading-spinner"></div>
+                <p>Loading news...</p>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prev-page" class="btn btn-outline" disabled>
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span id="page-info" class="page-info">Page 1 of 1</span>
+            <button id="next-page" class="btn btn-outline" disabled>
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Footer will be loaded dynamically -->
+    <!-- Chatbot will be loaded dynamically -->
+    
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>

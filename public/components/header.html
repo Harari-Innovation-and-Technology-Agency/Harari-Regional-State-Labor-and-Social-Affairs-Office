@@ -1,0 +1,79 @@
+<!-- Header Component - Loaded dynamically on all pages -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- ✅ FIX: Change from assets/images/ to /assets/images/ -->
+                    <img src="/assets/images/orglogo.jpg" alt="Harari Region Labor and Social Affairs Office Logo">
+                </a>
+                <span data-i18n="title">Harari Regional State Labor and Social Affairs Office</span>
+            </div>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="/index.html" data-i18n="home">Home</a>
+                
+                <!-- About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="/pages/about.html" class="dropdown-toggle" data-i18n="about">About Us</a>
+                    <div class="dropdown-menu">
+                        <a href="/pages/office.html" data-i18n="team">Office Structure</a>
+                        <a href="/pages/planreport.html" data-i18n="plan">Plan and Report</a>
+                    </div>
+                
+                </div>
+                
+                <!-- Services Dropdown -->
+                <div class="dropdown">
+                    <a href="/pages/service.html" class="dropdown-toggle" data-i18n="services">Services</a>
+                    <!-- <div class="dropdown-menu">
+                        <a href="/pages/service.html" data-i18n="allServices">All Services</a>
+                    </div> -->
+                </div>
+                
+                <!-- Announcement Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-i18n="announcement">Announcement</a>
+                    <div class="dropdown-menu">
+                        <a href="/pages/news.html" data-i18n="news">News</a>
+                        <a href="/pages/photogallary.html" data-i18n="photo">Photo Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="/pages/address.html" class="dropdown-toggle" data-i18n="contact">Contact Us</a>
+                    <!-- <div class="dropdown-menu">
+                        <a href="/pages/address.html" data-i18n="address">Address</a>
+                    </div> -->
+                </div>
+                
+                <!-- LANGUAGE DROPDOWN - KEPT -->
+                <div class="language-dropdown">
+                    <button id="language-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span data-i18n="current-lang">English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-options">
+                        <button data-lang="en">
+                            <span class="fas fa-flag-usa"></span>
+                            <span>English</span>
+                        </button>
+                        <button data-lang="am">
+                            <span class="flag-icon">ET</span>
+                            <span>አማርኛ</span>
+                        </button>
+                        <button data-lang="om">
+                            <span class="flag-icon">OR</span>
+                            <span>Afaan Oromoo</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
