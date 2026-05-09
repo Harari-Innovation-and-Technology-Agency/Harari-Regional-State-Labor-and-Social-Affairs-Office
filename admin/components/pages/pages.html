@@ -1,0 +1,198 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<section id="pages" class="content-section active">
+    <!-- Tab Navigation for Multiple Pages -->
+    <div style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border);">
+        <button class="tab-btn active" data-page="about" onclick="switchPageTab('about')">
+            <i class="fas fa-building"></i> About Us
+        </button>
+        <button class="tab-btn" data-page="contact" onclick="switchPageTab('contact')">
+            <i class="fas fa-address-book"></i> Contact Page
+        </button>
+        <button class="tab-btn" data-page="faq" onclick="switchPageTab('faq')">
+            <i class="fas fa-question-circle"></i> FAQ
+        </button>
+        <button class="tab-btn" data-page="terms" onclick="switchPageTab('terms')">
+            <i class="fas fa-file-contract"></i> Terms
+        </button>
+    </div>
+
+    <!-- Status Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 15px; background: var(--light); border-radius: 8px;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div>
+                <strong>Last Updated:</strong> 
+                <span id="pageLastUpdated">Never</span>
+            </div>
+            <div>
+                <strong>Status:</strong> 
+                <span id="pageStatus" class="badge bg-warning">Draft</span>
+            </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary" onclick="previewPage()">
+                <i class="fas fa-eye"></i> Preview
+            </button>
+            <label class="toggle-switch">
+                <input type="checkbox" id="pagePublished" onchange="togglePublishStatus()">
+                <span class="toggle-slider"></span>
+                <span style="margin-left: 10px;">Published</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- About Us Page Content -->
+    <div id="about-page" class="page-tab-content active">
+        <div class="form-section">
+            <div class="section-header">
+                <h2><i class="fas fa-file-alt"></i> About Us Content</h2>
+                <span class="badge bg-info">Current Page</span>
+            </div>
+            
+            <form id="pagesForm">
+                <!-- Hero Section -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 15px;">Hero Section</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pageHeroTitle">Hero Title *</label>
+                            <input type="text" id="pageHeroTitle" class="form-control" 
+                                   placeholder="e.g., Empowering Communities" value="About Our Office">
+                        </div>
+                        <div class="form-group">
+                            <label for="pageHeroImage">Hero Image</label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="file" id="pageHeroImage" accept="image/*" style="display: none;">
+                                <button type="button" class="btn btn-secondary" onclick="document.getElementById('pageHeroImage').click()">
+                                    <i class="fas fa-upload"></i> Upload Hero Image
+                                </button>
+                                <span id="heroImageName" style="color: var(--gray); align-self: center;">No image uploaded</span>
+                            </div>
+                            <div id="heroImagePreview" style="margin-top: 10px; display: none;">
+                                <img src="" alt="Hero preview" style="max-width: 200px; max-height: 100px; border-radius: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 15px;">Main Content</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pageVision">Vision Statement *</label>
+                            <textarea id="pageVision" class="form-control" 
+                                      required placeholder="Our vision for the future..." 
+                                      rows="4">To be a leading force in community development</textarea>
+                            <small style="color: var(--gray);">What we aspire to achieve</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageMission">Mission Statement *</label>
+                            <textarea id="pageMission" class="form-control" 
+                                      required placeholder="Our purpose and approach..." 
+                                      rows="4">To provide accessible and quality services</textarea>
+                            <small style="color: var(--gray);">What we do and how we do it</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values with Better UX -->
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3>Core Values</h3>
+                        <button type="button" class="btn btn-sm btn-secondary" onclick="addValueField()">
+                            <i class="fas fa-plus"></i> Add Value
+                        </button>
+                    </div>
+                    <div id="valuesContainer">
+                        <!-- Values will be dynamically added here -->
+                        <div class="value-item" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <input type="text" class="form-control" placeholder="e.g., Integrity" value="Integrity">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="this.closest('.value-item').remove()">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="value-item" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <input type="text" class="form-control" placeholder="e.g., Excellence" value="Excellence">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="this.closest('.value-item').remove()">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="value-item" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <input type="text" class="form-control" placeholder="e.g., Transparency" value="Transparency">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="this.closest('.value-item').remove()">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsibilities with Rich Text -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 15px;">Office Responsibilities</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <button type="button" class="btn btn-sm btn-light" onclick="formatText('bold')">
+                            <i class="fas fa-bold"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-light" onclick="formatText('italic')">
+                            <i class="fas fa-italic"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-light" onclick="formatText('underline')">
+                            <i class="fas fa-underline"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-light" onclick="insertList()">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <textarea id="pageResponsibilities" class="form-control" 
+                              placeholder="List your office responsibilities..." 
+                              rows="8">• Process and evaluate program applications
+• Conduct community outreach activities
+• Maintain client records and documentation
+• Coordinate with partner agencies</textarea>
+                    <small style="color: var(--gray);">Use bullet points for better readability</small>
+                </div>
+
+                <!-- SEO Section -->
+                <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h3 style="margin-bottom: 15px;">SEO Settings</h3>
+                    <div class="form-group">
+                        <label for="pageMetaTitle">Meta Title</label>
+                        <input type="text" id="pageMetaTitle" class="form-control" 
+                               placeholder="About Us - Office Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pageMetaDescription">Meta Description</label>
+                        <textarea id="pageMetaDescription" class="form-control" 
+                                  rows="2" placeholder="Brief description for search engines..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="btn-group" style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary" id="pagesSubmitBtn">
+                        <i class="fas fa-save"></i> Save Content
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                    <button type="button" class="btn btn-info" onclick="viewVersionHistory()">
+                        <i class="fas fa-history"></i> Version History
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Other page templates (initially hidden) -->
+    <div id="contact-page" class="page-tab-content">
+        <!-- Contact page form will go here -->
+    </div>
+    <div id="faq-page" class="page-tab-content">
+        <!-- FAQ page form will go here -->
+    </div>
+    <div id="terms-page" class="page-tab-content">
+        <!-- Terms page form will go here -->
+    </div>
+</section>

@@ -1,0 +1,309 @@
+/* =============================================
+   STATS CARDS - WITH GRADIENT COLORS
+   ============================================= */
+.services-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.stat-card i {
+  font-size: 20px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card h3 {
+  margin: 8px 0 3px;
+  font-size: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual Card Colors */
+.stat-card.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.stat-card.success {
+  background: linear-gradient(135deg, #16a34a 0%, #166534 100%);
+}
+
+.stat-card.info {
+  background: linear-gradient(135deg, #0891b2 0%, #155e75 100%);
+}
+
+.stat-card.warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+}
+
+.stat-card.danger {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+/* Alternative Color Variants */
+.stat-card.purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.stat-card.pink {
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+.stat-card.indigo {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+}
+
+/* Hover Effect */
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* =============================================
+   STATUS BADGE COLORS
+   ============================================= */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.status-active {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.status-inactive {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.status-featured {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #e65100;
+  border: 1px solid #ffb74d;
+}
+
+.status-draft {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.status-published {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+/* Status Badge Icons */
+.status-badge i {
+  font-size: 10px;
+}
+
+/* =============================================
+   CATEGORY BADGE COLORS
+   ============================================= */
+.category-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.category-social {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.category-employment {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.category-disability {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffe69b 100%);
+  color: #856404;
+  border: 1px solid #ffe69b;
+}
+
+.category-labor {
+  background: linear-gradient(135deg, #cff4fc 0%, #d1e7ff 100%);
+  color: #055160;
+  border: 1px solid #9eeaf9;
+}
+
+.category-community {
+  background: linear-gradient(135deg, #d1e7dd 0%, #c3e6cb 100%);
+  color: #0a3622;
+  border: 1px solid #a3cfbb;
+}
+
+.category-training {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #6b21a8;
+  border: 1px solid #d8b4fe;
+}
+
+.category-financial {
+  background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+/* =============================================
+   BUTTON COLORS
+   ============================================= */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  border: none;
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border: none;
+  color: white;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border: none;
+  color: white;
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  border: none;
+  color: white;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  border: none;
+  color: white;
+}
+
+/* =============================================
+   ICON PREVIEW COLORS
+   ============================================= */
+.icon-preview {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #2563eb;
+  border: 1px solid #cbd5e1;
+}
+
+.icon-preview-small {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #2563eb;
+  border: 1px solid #e2e8f0;
+}
+
+/* =============================================
+   RICH TOOLBAR COLORS
+   ============================================= */
+.rich-toolbar {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.rich-toolbar .btn-light {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.rich-toolbar .btn-light:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* =============================================
+   TABLE ACTION BUTTON FIX
+   ============================================= */
+
+#serviceTableBody td:last-child {
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+#serviceTableBody td:last-child button {
+  margin-right: 6px;
+}
+
+#serviceTableBody td:last-child button:last-child {
+  margin-right: 0;
+}
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.action-buttons .btn {
+  white-space: nowrap;
+}

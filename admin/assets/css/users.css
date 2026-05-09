@@ -1,0 +1,207 @@
+/* =============================================
+   USERS MODULE STYLES
+   ============================================= */
+
+/* Stats Cards */
+.users-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card i {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.stat-card h3 {
+  margin: 8px 0 3px;
+  font-size: 22px;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.stat-card.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.stat-card.success {
+  background: linear-gradient(135deg, #16a34a 0%, #166534 100%);
+}
+
+.stat-card.warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+}
+
+.stat-card.info {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+/* Role Badges */
+.role-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.role-admin {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.role-editor {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.role-viewer {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #6b21a8;
+  border: 1px solid #d8b4fe;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.status-active {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.status-inactive {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* Table Styles */
+#users table {
+  width: 100%;
+  min-width: 800px;
+}
+
+#users th,
+#users td {
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+#users td:nth-child(4) { /* Status column */
+  width: 100px;
+}
+
+#users td:nth-child(5) { /* Last Login column */
+  width: 150px;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+#users td:nth-child(6) { /* Actions column */
+  width: 120px;
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Password Strength */
+.password-strength {
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.strength-weak {
+  color: #dc2626;
+}
+
+.strength-medium {
+  color: #f59e0b;
+}
+
+.strength-strong {
+  color: #16a34a;
+}
+
+/* Filter Section */
+.filter-container {
+  position: relative;
+}
+
+.filter-container i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.filter-input {
+  padding-left: 35px !important;
+  width: 250px;
+}
+
+/* Mobile Cards */
+.mobile-user-cards {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #users .table-container {
+    display: none;
+  }
+  
+  .mobile-user-cards {
+    display: block;
+  }
+  
+  .users-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .users-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

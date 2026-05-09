@@ -1,0 +1,114 @@
+/* Contacts Module Styles */
+
+/* Table Styles */
+#contacts table td {
+  vertical-align: middle;
+}
+
+.contact-new {
+  background-color: #f0f9ff;
+}
+
+/* Contact Avatar */
+.contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Status Badges */
+#contacts table td span.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.status.new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status.read {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.status.replied {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.new i,
+.status.read i,
+.status.replied i {
+  font-size: 10px;
+}
+
+/* Hover effects */
+.status.new:hover {
+  background: #bfdbfe;
+}
+
+.status.read:hover {
+  background: #d1d5db;
+}
+
+.status.replied:hover {
+  background: #bbf7d0;
+}
+
+/* Modal Styles */
+.modal {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  color: #6b7280;
+}
+
+.empty-state i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #contacts table {
+    min-width: 800px;
+  }
+  
+  .modal > div {
+    width: 95%;
+    margin: 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .status {
+    border: 1px solid #000;
+  }
+}

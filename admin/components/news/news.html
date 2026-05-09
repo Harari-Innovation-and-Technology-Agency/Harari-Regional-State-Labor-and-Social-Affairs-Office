@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/news.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<section id="news" class="content-section active">
+  <div class="form-section">
+    <div class="section-header">
+      <h2><i class="fas fa-newspaper"></i> Add News Article</h2>
+      <button class="btn btn-secondary" id="resetNewsForm">
+        Clear Form
+      </button>
+    </div>
+
+    <form id="newsForm">
+
+      <div class="form-group">
+        <label for="newsTitle">Title *</label>
+        <input type="text" id="newsTitle" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="newsCategory">Category</label>
+        <select id="newsCategory" class="form-control">
+          <option value="Announcement">Announcement</option>
+          <option value="Meeting">Meeting</option>
+          <option value="Event">Event</option>
+          <option value="Public Notice">News</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="newsDate">Publication Date</label>
+        <input type="date" id="newsDate" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="newsCover">Upload Cover Image</label>
+        <input type="file" id="newsCover" class="form-control" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="newsExcerpt">Short Summary (Optional)</label>
+        <textarea id="newsExcerpt" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="newsBody">Full Content *</label>
+        <textarea id="newsBody" class="form-control" rows="6" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="newsStatus">Status</label>
+        <select id="newsStatus" class="form-control">
+          <option value="Draft">Draft</option>
+          <option value="Under Review">Under Review</option>
+          <option value="Published">Published</option>
+        </select>
+      </div>
+
+      <input type="hidden" id="newsId">
+
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">
+          Save Article
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-list"></i> All News Articles</h2>
+            <div class="search-box" style="max-width: 250px;">
+                <input type="text" placeholder="Search news..." id="newsSearch">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="newsTableBody">
+                    <!-- News rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+            <div id="newsPaginationInfo">Loading...</div>
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-sm" id="prevNewsPage" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <button class="btn btn-secondary btn-sm" id="nextNewsPage" disabled>
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

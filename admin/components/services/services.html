@@ -1,0 +1,190 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/services.css">
+
+<section id="services" class="content-section active">
+
+    <!-- ============================= -->
+    <!-- STATS CARDS -->
+    <!-- ============================= -->
+    <div class="services-stats-grid">
+        <div class="stat-card primary">
+            <i class="fas fa-cogs"></i>
+            <h3 id="totalServicesCount">0</h3>
+            <p>Total Services</p>
+        </div>
+
+        <div class="stat-card success">
+            <i class="fas fa-check-circle"></i>
+            <h3 id="availableServicesCount">0</h3>
+            <p>Available Services</p>
+        </div>
+
+        <div class="stat-card danger">
+            <i class="fas fa-pause-circle"></i>
+            <h3 id="suspendedServicesCount">0</h3>
+            <p>Suspended Services</p>
+        </div>
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- ADD / EDIT SERVICE FORM -->
+    <!-- ============================= -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-plus-circle"></i> 
+                <span id="formTitle">Add New Service</span>
+            </h2>
+
+            <button type="button" class="btn btn-secondary" id="resetServiceForm">
+                <i class="fas fa-redo"></i> Clear Form
+            </button>
+        </div>
+
+        <form id="serviceForm">
+
+            <!-- Service Title -->
+            <div class="form-group">
+                <label for="serviceTitle">
+                    Service Title *
+                </label>
+                <input type="text"
+                       id="serviceTitle"
+                       class="form-control"
+                       maxlength="100"
+                       required
+                       placeholder="Enter service title">
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+                <label for="serviceCategory">
+                    Category *
+                </label>
+                <select id="serviceCategory"
+                        class="form-control"
+                        required>
+                    <option value="">Select Category</option>
+                    <option value="Employment">Employment</option>
+                    <option value="Social Protection">Social Protection</option>
+                    <option value="Disability Support">Disability Support</option>
+                    <option value="Labor Relations">Labor Relations</option>
+                    <option value="Community Development">Community Development</option>
+                </select>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="serviceDescription">
+                    Description *
+                </label>
+                <textarea id="serviceDescription"
+                          class="form-control"
+                          rows="5"
+                          required
+                          placeholder="Describe what this service provides...">
+                </textarea>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group">
+                <label for="serviceStatus">
+                    Status *
+                </label>
+                <select id="serviceStatus"
+                        class="form-control"
+                        required>
+                    <option value="Available">Available</option>
+                    <option value="Suspended">Suspended</option>
+                </select>
+            </div>
+
+            <input type="hidden" id="serviceId">
+
+            <!-- Submit -->
+            <div class="form-actions">
+                <button type="submit"
+                        class="btn btn-primary"
+                        id="serviceSubmitBtn">
+                    <i class="fas fa-save"></i> Save Service
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- SERVICES LIST -->
+    <!-- ============================= -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-list"></i> All Services</h2>
+
+            <div style="display:flex; gap:10px; align-items:center;">
+                <input type="text"
+                       id="serviceSearch"
+                       class="form-control"
+                       placeholder="Search services...">
+
+                <select id="statusFilter"
+                        class="form-control"
+                        style="width:180px;">
+                    <option value="all">All Status</option>
+                    <option value="Available">Available</option>
+                    <option value="Suspended">Suspended</option>
+                </select>
+
+                <button class="btn btn-secondary"
+                        id="refreshServices">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Services Table -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="serviceTableBody">
+                    <!-- Services inserted by JS -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <div class="pagination-info" id="paginationInfo">
+                Showing 0-0 of 0 services
+            </div>
+
+            <div class="pagination-controls">
+                <button class="btn btn-sm btn-secondary"
+                        id="prevPage"
+                        disabled>
+                    Previous
+                </button>
+
+                <span id="currentPage">Page 1</span>
+
+                <button class="btn btn-sm btn-secondary"
+                        id="nextPage"
+                        disabled>
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+
+</section>

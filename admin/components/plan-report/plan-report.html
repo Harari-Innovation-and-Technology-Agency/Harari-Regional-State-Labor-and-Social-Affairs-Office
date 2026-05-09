@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/plan-report.css">
+
+
+<section id="plan-report" class="content-section active">
+
+    <!-- PAGE HEADER -->
+    <div class="form-section">
+        <div class="section-header">
+            <h2>
+                <i class="fas fa-upload"></i>
+                Upload Plans & Reports
+            </h2>
+        </div>
+
+        <!-- ================= PLAN UPLOAD ================= -->
+        <div style="margin-bottom:40px;">
+            <h3>Upload Plan</h3>
+
+            <form id="planUploadForm" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Plan Title *</label>
+                    <input type="text"
+                           id="planTitle"
+                           class="form-control"
+                           required
+                           placeholder="Enter plan title">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Plan File *</label>
+                    <input type="file"
+                           id="planFile"
+                           class="form-control"
+                           required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-upload"></i>
+                    Upload Plan
+                </button>
+
+            </form>
+        </div>
+
+
+        <!-- ================= REPORT UPLOAD ================= -->
+        <div style="margin-bottom:40px;">
+            <h3>Upload Report</h3>
+
+            <form id="reportUploadForm" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Report Title *</label>
+                    <input type="text"
+                           id="reportTitle"
+                           class="form-control"
+                           required
+                           placeholder="Enter report title">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Report File *</label>
+                    <input type="file"
+                           id="reportFile"
+                           class="form-control"
+                           required>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-upload"></i>
+                    Upload Report
+                </button>
+
+            </form>
+        </div>
+
+
+        <!-- ================= LIST FILES ================= -->
+        <div>
+            <h3>Uploaded Files</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Title</th>
+                        <th>File</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="planReportTableBody">
+                    <!-- Filled by JS -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>

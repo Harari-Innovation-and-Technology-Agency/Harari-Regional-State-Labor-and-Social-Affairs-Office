@@ -1,0 +1,55 @@
+#news .form-group {
+  margin-bottom: 18px;
+}
+
+#news label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+#news input[type="file"] {
+  padding: 6px;
+  background: #fff;
+}
+
+#news select {
+  background: #fff;
+}
+
+#news .btn-group {
+  margin-top: 15px;
+}
+
+#news table th,
+#news table td {
+  vertical-align: middle;
+}
+
+#news .badge {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.badge-draft {
+  background: #ffc107;
+  color: #000;
+}
+
+.badge-review {
+  background: #17a2b8;
+  color: #fff;
+}
+
+.badge-published {
+  background: #28a745;
+  color: #fff;
+}
+#news table td img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}

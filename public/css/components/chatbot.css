@@ -1,0 +1,140 @@
+/* Floating Chat Button */
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--chat-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#chatbot-toggle:hover { 
+    background: var(--chat-secondary); 
+}
+
+/* Chat Container */
+#chat-container {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 370px;
+    height: 500px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    font-family: "Segoe UI", Arial, sans-serif;
+    z-index: 1000;
+}
+
+/* Chat Header */
+#chat-header {
+    background: var(--chat-primary);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Chat Messages */
+#chatbox {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.message {
+    max-width: 75%;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    clear: both;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.user {
+    background: var(--chat-primary);
+    color: white;
+    float: right;
+    border-bottom-right-radius: 5px;
+}
+
+.bot {
+    background: #e5e5ea;
+    color: #000;
+    float: left;
+    border-bottom-left-radius: 5px;
+}
+
+/* Input Area */
+#chat-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+    background: #f1f1f1;
+    padding: 8px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+#sendBtn {
+    background: var(--chat-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#sendBtn:hover { 
+    background: var(--chat-secondary); 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    #chat-container {
+        width: 300px;
+        height: 450px;
+        right: 10px;
+        bottom: 80px;
+    }
+    
+    #chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        bottom: 15px;
+        right: 15px;
+    }
+}

@@ -1,0 +1,154 @@
+/* =========================================
+   GLOBAL RESPONSIVE SYSTEM
+   Applies to ALL pages
+========================================= */
+
+/* ===== GLOBAL RESET FOR RESPONSIVE ===== */
+* {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== CONTAINER STANDARDIZATION ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   LARGE DEVICES (Desktops < 1200px)
+========================================= */
+@media (max-width: 1200px) {
+
+    .container {
+        max-width: 1000px;
+    }
+
+}
+
+/* =========================================
+   MEDIUM DEVICES (Tablets)
+========================================= */
+@media (max-width: 992px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    /* Stack flex layouts */
+    .about-block,
+    .services-header,
+    .services-users-header,
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .about-block img {
+        margin-bottom: 20px;
+    }
+
+    /* Reduce header padding */
+    .page-header {
+        padding: 50px 20px;
+    }
+
+}
+
+/* =========================================
+   SMALL DEVICES (Mobile Landscape)
+========================================= */
+@media (max-width: 768px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Page Header */
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    /* About Page Blocks */
+    .about-block {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-block img {
+        width: 80px;
+        margin: 0 auto;
+    }
+
+    /* Grid layouts */
+    .services-grid,
+    .service-users-grid,
+    .cards-grid,
+    .news-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Forms */
+    input,
+    select,
+    textarea {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   EXTRA SMALL DEVICES (Mobile Portrait)
+========================================= */
+@media (max-width: 480px) {
+
+    html {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .page-header {
+        padding: 40px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-block img {
+        width: 70px;
+    }
+
+    /* Reduce section spacing */
+    section {
+        margin-bottom: 40px;
+    }
+
+}

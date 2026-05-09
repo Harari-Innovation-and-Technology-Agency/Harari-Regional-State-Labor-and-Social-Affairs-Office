@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/contacts.css">
+
+<section id="contacts" class="content-section active">
+    <div class="form-section">
+        <div class="section-header">
+            <h2><i class="fas fa-envelope"></i> Contact Messages</h2>
+            <div style="display: flex; gap: 10px;">
+                <select id="contactFilter" class="form-control" style="width: 150px;">
+                    <option value="">All Status</option>
+                    <option value="new">New</option>
+                    <option value="read">Read</option>
+                    <option value="replied">Replied</option>
+                </select>
+                <button class="btn btn-secondary" onclick="loadContacts()">
+                    <i class="fas fa-sync"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contactTableBody">
+                    <!-- Contact rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,7 @@
+#settings input {
+  max-width: 400px;
+}
+
+#settings .form-section {
+  border-left: 5px solid var(--primary);
+}
